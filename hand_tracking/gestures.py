@@ -256,6 +256,9 @@ class GestureRecognizer:
         # Detect normal gestures first
         if self._is_open_palm(lm_list):
             return "Open Palm"
+        
+        elif self._is_thumbs_up(lm_list):
+            return "Thumbs Up"
 
         elif self._is_closed_fist(lm_list):
             return "Closed Fist"
@@ -272,8 +275,7 @@ class GestureRecognizer:
         elif pinch_distance < 50:
             return "Zoom Gesture"
         
-        elif self._is_thumbs_up(lm_list):
-            return "Thumbs Up"
+        
 
         return "Unknown Gesture"
 if __name__ == "__main__":
